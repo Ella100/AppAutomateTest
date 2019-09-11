@@ -1,0 +1,26 @@
+*** Settings ***
+Library           AppiumLibrary
+
+*** Keywords ***
+切换到webview
+    @{contexts}    Get Contexts    #获取原生app跟webview的名称
+    Log Many    @{contexts}    #打印出原生app跟webview名称
+    ${cur_context}    Get Current Context    #得到当前app内容
+    log    ${cur_context}    #打印当前app内容名称
+    log    开始切换
+    Switch To Context    WEBVIEW_chrome
+    ${cur_context}    Get Current Context    #得到当前app内容
+    log    ${cur_context}    #打印当前app内容名称
+    comment    ${page}    Log Source    #获取当前webview的源码
+    comment    log    ${page}    #打印当前webview的源码
+
+切换到native
+    @{contexts}    Get Contexts    #获取原生app跟webview的名称
+    Log Many    @{contexts}    #打印出原生app跟webview名称
+    ${cur_context}    Get Current Context    #得到当前app内容
+    log    ${cur_context}    #打印当前app内容名称
+    log    开始切换
+    Switch To Context    NATIVE_APP
+    ${cur_context}    Get Current Context    #得到当前app内容
+    comment    log    ${cur_context}    #打印当前app内容名称
+    comment    Sleep    3

@@ -1,0 +1,8 @@
+*** Settings ***
+Library     AppiumLibrary
+Resource    切换到webview&native.txt
+
+*** Keywords ***
+滑动屏幕
+    [Arguments]    ${start_x}   ${start_y}  ${offset_x}  ${offset_y} 
+    AppiumLibrary.Swipe    ${start_x}   ${start_y}  ${offset_x}  ${offset_y}       

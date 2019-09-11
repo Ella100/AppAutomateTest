@@ -1,0 +1,124 @@
+*** Settings ***
+Library     AppiumLibrary
+Resource    ../公共库/切换到webview&native.txt
+
+*** Keywords ***
+#登录模块xpath路径
+#点击我的进入个人中心
+点击我的
+    Click Element    //*[@id="app"]/div[1]/footer/div/a[4]
+#点击个人中心未登录   
+点击未登录
+    Click Element    //*[@id="app"]/div[1]/div[1]/header/div/div/div[1]/img    
+输入用户名
+    [Arguments]    ${username}
+    AppiumLibrary.Wait Until Page Contains    用户名
+    Input Text    //*[@id="app"]/div[1]/div[2]/div[1]/div[2]/div/input    ${username}    
+输入密码
+    [Arguments]    ${password}
+    Input Text    //*[@id="app"]/div[1]/div[2]/div[1]/div[3]/div/input    ${password}    
+点击登录按钮
+    Click Element    //*[@id="app"]/div[1]/div[2]/p[1]    
+选择不保存密码
+    #点击不保存密码
+    AppiumLibrary.Wait Until Page Contains    密码    
+    AppiumLibrary.Click Element    com.android.chrome:id/button_secondary  
+    
+  
+#收货地址功能模块xpath路径
+点击账号管理
+    AppiumLibrary.Click Element    //*[@id="app"]/div[1]/div[1]/header/div/div/div[2]/div[3]    
+点击收货地址管理
+    AppiumLibrary.Click Element    //*[@id="app"]/div[1]/div[2]/div[2]/ul/li[4]    
+点击新增收货地址
+    AppiumLibrary.Click Element    //*[@id="app"]/div[1]/div[2]/div 
+输入收货地址信息
+    [Arguments]    ${name}    ${phoneNumber}    ${detailAddress}
+    #输入收货人姓名
+    AppiumLibrary.Input Text    //*[@id="app"]/div[1]/div/section/div/div[1]/input    ${name}
+    #输入手机号
+    AppiumLibrary.Input Text    //*[@id="app"]/div[1]/div/section/div/div[2]/input    ${phoneNumber}
+    #选择所在地区
+    AppiumLibrary.Click Element    //*[@id="app"]/div[1]/div/section/div/div[3]
+    切换到webview
+    #选择省份
+    AppiumLibrary.Click Element    //*[@id="app"]/div[1]/div/section/ul[2]/li[1]
+    BuiltIn.Sleep    1    
+    #选择市
+    AppiumLibrary.Click Element    //*[@id="app"]/div[1]/div/section/ul[2]/li
+    BuiltIn.Sleep    1 
+    #选择区
+    AppiumLibrary.Click Element    //*[@id="app"]/div[1]/div/section/ul[2]/li[1]
+    BuiltIn.Sleep    1 
+    #选择街道
+    AppiumLibrary.Click Element    //*[@id="app"]/div[1]/div/section/ul[2]/li[1]
+    BuiltIn.Sleep    1 
+    #输入详细信息
+    AppiumLibrary.Input Text    //*[@id="app"]/div[1]/div/section/div/div[4]/input    ${detailAddress}
+    BuiltIn.Sleep    1 
+点击保存收货地址
+    AppiumLibrary.Click Element    //*[@id="app"]/div[1]/div/section/div/div[6]/div    
+点击修改收货地址
+    AppiumLibrary.Click Element    //*[@id="app"]/div[1]/div[3]/div[1]/div[2]    
+#修改地址这里，把原来不是默认地址的修改为默认地址
+点击设为默认地址
+    AppiumLibrary.Click Element    //*[@id="app"]/div[1]/div/section/div/div[5]/span[2]    
+点击保存修改后地址
+    AppiumLibrary.Click Element    //*[@id="app"]/div[1]/div/section/div/div[6]/div    
+点击删除收货地址
+    AppiumLibrary.Click Element    //*[@id="app"]/div[1]/div/section/div/div[7]/div
+    
+#发票资质模块xpath路径
+点击添加发票资质
+    #点击添加发票资质
+    AppiumLibrary.Click Element    //*[@id="app"]/div[1]/div[1]/section[4]/div/div/div
+    
+填写发票资质内容
+    #输入公司名称
+    [Arguments]    ${companyName}  ${number}  ${address}    ${phoneNumber}  ${bankName}  ${bankAccount}  ${name}  ${region}  ${detailAddress}  ${Mobile}
+    AppiumLibrary.Input Text    //*[@id="app"]/div[1]/div/div[1]/div/div/div[1]/input    ${companyName}
+    #输入纳税人识别号
+    AppiumLibrary.Input Text    //*[@id="app"]/div[1]/div/div[1]/div/div/div[2]/input    ${number}    
+    #输入注册地址
+    AppiumLibrary.Input Text    //*[@id="app"]/div[1]/div/div[1]/div/div/div[3]/input    ${address}
+    #输入注册电话
+    AppiumLibrary.Input Text    //*[@id="app"]/div[1]/div/div[1]/div/div/div[4]/input    ${phoneNumber}
+    #输入开户行
+    AppiumLibrary.Input Text    //*[@id="app"]/div[1]/div/div[1]/div/div/div[5]/input    ${bankName}
+    #输入银行账号
+    AppiumLibrary.Input Text    //*[@id="app"]/div[1]/div/div[1]/div/div/div[6]/input    ${bankAccount}
+    #输入收票人姓名
+    AppiumLibrary.Input Text    //*[@id="app"]/div[1]/div/div[1]/div/div/div[7]/input    ${name}
+    #输入所在区域
+    AppiumLibrary.Input Text    //*[@id="app"]/div[1]/div/div[1]/div/div/div[8]/input    ${region}
+    #输入详细地址
+    AppiumLibrary.Input Text    //*[@id="app"]/div[1]/div/div[1]/div/div/div[9]/input    ${detailAddress}
+    #输入收票人手机号
+    AppiumLibrary.Input Text    //*[@id="app"]/div[1]/div/div[1]/div/div/div[10]/input    ${Mobile}
+    #同意发票资质确认书
+    AppiumLibrary.Click Element    //*[@id="app"]/div[1]/div/div[2]/div/div/div/i
+点击保存发票资质
+    AppiumLibrary.Click Element    //*[@id="app"]/div[1]/div/div[4]/button
+    
+#购买流程功能模块xpath路径
+点击智能手机类目
+    #进入商城首页 选择商品，点击手机
+    AppiumLibrary.Click Element    //*[@id="app"]/div[1]/div[3]/div[1]/div[1]/div/a[3]/div  
+选择某个商品
+    #跳转到类目列表，点击充电宝
+    AppiumLibrary.Click Element    //*[@id="app"]/div[1]/section/div/div[4]/ul/li[1]   
+进入商品详情界面
+    #点击商品进入商品详情界面
+    AppiumLibrary.Click Element    //*[@id="searchlist-normal"]/li    
+点击立即购买
+    #进入到商品详情页，点击立即购买
+    AppiumLibrary.Wait Until Page Contains    立即购买    
+    AppiumLibrary.Click Element    //*[@id="directorder"]    
+弹出窗口点击确定
+    #弹出窗口点击确定
+    AppiumLibrary.Wait Until Page Contains  确定      
+    AppiumLibrary.Click Element    //*[@id="detail"]/div[7]/div[1]/div[3]/button  
+   
+#购买流程模块xpath路径
+点击首页
+    AppiumLibrary.Click Element    //*[@id="app"]/div[1]/footer/div/a[1]

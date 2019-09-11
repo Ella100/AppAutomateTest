@@ -1,0 +1,10 @@
+*** Settings ***
+Library           AppiumLibrary
+
+*** Keywords ***
+登录成功断言
+    [Arguments]    ${getLoginName}    ${targetName}
+    ${getLoginName}    appiumLibrary.get text    //*[@id="app"]/div[1]/div[1]/header/div/div/div[2]/div[1]/div[1]
+    Should Contain    ${getLoginName}    ${targetName}
+    log    ${getLoginName}
+    log    登录成功

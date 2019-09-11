@@ -1,0 +1,30 @@
+*** Settings ***
+Library     AppiumLibrary
+Resource    ../Xpath路径库/xpath路径.txt
+Resource    切换到webview&native.txt
+Resource    初始化APP.txt
+Resource    ../断言库/登录功能断言.txt
+
+*** Keywords ***
+进入个人中心
+    Wait Until Page Contains    我的
+    切换到webview
+    #点击我的进入个人中心
+    点击我的
+    AppiumLibrary.Wait Until Page Contains    个人中心
+    #点击登录
+    点击未登录
+    
+登录成功
+    初始化APP
+    进入个人中心
+    切换到webview
+    输入用户名    18813727290
+    输入密码    qq123456
+    点击登录按钮
+    Sleep  2
+    切换到native
+    选择不保存密码
+    切换到webview
+    登录成功断言    G18813727290    18813727290
+    

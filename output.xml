@@ -1,0 +1,915 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20190911 14:40:11.362" generator="Robot 3.0.2 (Python 2.7.15 on win32)">
+<suite source="D:\RED\workspace\MALL" id="s1" name="MALL">
+<suite source="D:\RED\workspace\MALL\功能库" id="s1-s1" name="功能库">
+<suite source="D:\RED\workspace\MALL\功能库\发票资质" id="s1-s1-s1" name="发票资质">
+<suite source="D:\RED\workspace\MALL\功能库\发票资质\发票资质.robot" id="s1-s1-s1-s1" name="发票资质">
+<test id="s1-s1-s1-s1-t1" name="新增发票资质">
+<kw name="登录成功" library="登录功能">
+<kw name="初始化APP" library="初始化APP">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>unicodeKeyboard=true</arg>
+<arg>resetKeyboard=true</arg>
+<arg>platformName=Android</arg>
+<arg>platformVersion=7.0</arg>
+<arg>deviceName=30120ca00704</arg>
+<arg>appPackage=com.android.chrome</arg>
+<arg>appActivity=org.chromium.chrome.browser.ChromeTabbedActivity</arg>
+<arg>chromedriverExcutable=D:\Appium\node_modules\appium\node_modules\appium-chromedriver\chromedriver\win\chromedriver.exe\win\</arg>
+<arg>automationName=Uiautomator2</arg>
+</arguments>
+<status status="PASS" endtime="20190911 14:40:31.785" starttime="20190911 14:40:11.647"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20190911 14:40:34.787" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20190911 14:40:34.787" starttime="20190911 14:40:31.786"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>com.android.chrome:id/terms_accept</arg>
+</arguments>
+<status status="PASS" endtime="20190911 14:40:34.847" starttime="20190911 14:40:34.787"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>com.android.chrome:id/terms_accept</arg>
+</arguments>
+<msg timestamp="20190911 14:40:34.847" level="INFO">Clicking element 'com.android.chrome:id/terms_accept'.</msg>
+<status status="PASS" endtime="20190911 14:40:34.930" starttime="20190911 14:40:34.847"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20190911 14:40:35.931" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20190911 14:40:35.932" starttime="20190911 14:40:34.931"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>com.android.chrome:id/search_box_text</arg>
+</arguments>
+<status status="PASS" endtime="20190911 14:40:37.407" starttime="20190911 14:40:35.933"></status>
+</kw>
+<kw name="Go To Url" library="AppiumLibrary">
+<doc>Opens URL in default web browser.</doc>
+<arguments>
+<arg>https://mall.gree.com</arg>
+</arguments>
+<status status="PASS" endtime="20190911 14:40:38.347" starttime="20190911 14:40:37.408"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20190911 14:40:43.349" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20190911 14:40:43.350" starttime="20190911 14:40:38.348"></status>
+</kw>
+<status status="PASS" endtime="20190911 14:40:43.351" starttime="20190911 14:40:11.647"></status>
+</kw>
+<kw name="进入个人中心" library="登录功能">
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>我的</arg>
+</arguments>
+<status status="PASS" endtime="20190911 14:40:43.779" starttime="20190911 14:40:43.354"></status>
+</kw>
+<kw name="切换到webview" library="切换到webview&amp;native">
+<kw name="Get Contexts" library="AppiumLibrary">
+<doc>Get available contexts.</doc>
+<assign>
+<var>@{contexts}</var>
+</assign>
+<msg timestamp="20190911 14:40:44.075" level="INFO">[u'NATIVE_APP', u'WEBVIEW_chrome']</msg>
+<msg timestamp="20190911 14:40:44.076" level="INFO">@{contexts} = [ NATIVE_APP | WEBVIEW_chrome ]</msg>
+<status status="PASS" endtime="20190911 14:40:44.076" starttime="20190911 14:40:43.780"></status>
+</kw>
+<kw name="Log Many" library="BuiltIn">
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<arguments>
+<arg>@{contexts}</arg>
+</arguments>
+<msg timestamp="20190911 14:40:44.077" level="INFO">NATIVE_APP</msg>
+<msg timestamp="20190911 14:40:44.077" level="INFO">WEBVIEW_chrome</msg>
+<status status="PASS" endtime="20190911 14:40:44.077" starttime="20190911 14:40:44.076"></status>
+</kw>
+<kw name="Get Current Context" library="AppiumLibrary">
+<doc>Get current context.</doc>
+<assign>
+<var>${cur_context}</var>
+</assign>
+<msg timestamp="20190911 14:40:44.083" level="INFO">${cur_context} = NATIVE_APP</msg>
+<status status="PASS" endtime="20190911 14:40:44.084" starttime="20190911 14:40:44.077"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${cur_context}</arg>
+</arguments>
+<msg timestamp="20190911 14:40:44.084" level="INFO">NATIVE_APP</msg>
+<status status="PASS" endtime="20190911 14:40:44.085" starttime="20190911 14:40:44.084"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>开始切换</arg>
+</arguments>
+<msg timestamp="20190911 14:40:44.085" level="INFO">开始切换</msg>
+<status status="PASS" endtime="20190911 14:40:44.085" starttime="20190911 14:40:44.085"></status>
+</kw>
+<kw name="Switch To Context" library="AppiumLibrary">
+<doc>Switch to a new context</doc>
+<arguments>
+<arg>WEBVIEW_chrome</arg>
+</arguments>
+<status status="PASS" endtime="20190911 14:40:48.153" starttime="20190911 14:40:44.085"></status>
+</kw>
+<kw name="Get Current Context" library="AppiumLibrary">
+<doc>Get current context.</doc>
+<assign>
+<var>${cur_context}</var>
+</assign>
+<msg timestamp="20190911 14:40:48.172" level="INFO">${cur_context} = WEBVIEW_chrome</msg>
+<status status="PASS" endtime="20190911 14:40:48.172" starttime="20190911 14:40:48.154"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${cur_context}</arg>
+</arguments>
+<msg timestamp="20190911 14:40:48.175" level="INFO">WEBVIEW_chrome</msg>
+<status status="PASS" endtime="20190911 14:40:48.175" starttime="20190911 14:40:48.173"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${page}</arg>
+<arg>Log Source</arg>
+</arguments>
+<status status="PASS" endtime="20190911 14:40:48.177" starttime="20190911 14:40:48.176"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>log</arg>
+<arg>${page}</arg>
+</arguments>
+<status status="PASS" endtime="20190911 14:40:48.180" starttime="20190911 14:40:48.179"></status>
+</kw>
+<status status="PASS" endtime="20190911 14:40:48.181" starttime="20190911 14:40:43.779"></status>
+</kw>
+<kw name="点击我的" library="xpath路径">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//*[@id="app"]/div[1]/footer/div/a[4]</arg>
+</arguments>
+<msg timestamp="20190911 14:40:48.184" level="INFO">Clicking element '//*[@id="app"]/div[1]/footer/div/a[4]'.</msg>
+<status status="PASS" endtime="20190911 14:40:48.574" starttime="20190911 14:40:48.183"></status>
+</kw>
+<status status="PASS" endtime="20190911 14:40:48.574" starttime="20190911 14:40:48.182"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>个人中心</arg>
+</arguments>
+<status status="PASS" endtime="20190911 14:40:49.204" starttime="20190911 14:40:48.575"></status>
+</kw>
+<kw name="点击未登录" library="xpath路径">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//*[@id="app"]/div[1]/div[1]/header/div/div/div[1]/img</arg>
+</arguments>
+<msg timestamp="20190911 14:40:49.205" level="INFO">Clicking element '//*[@id="app"]/div[1]/div[1]/header/div/div/div[1]/img'.</msg>
+<status status="PASS" endtime="20190911 14:40:49.461" starttime="20190911 14:40:49.205"></status>
+</kw>
+<status status="PASS" endtime="20190911 14:40:49.461" starttime="20190911 14:40:49.204"></status>
+</kw>
+<status status="PASS" endtime="20190911 14:40:49.462" starttime="20190911 14:40:43.352"></status>
+</kw>
+<kw name="切换到webview" library="切换到webview&amp;native">
+<kw name="Get Contexts" library="AppiumLibrary">
+<doc>Get available contexts.</doc>
+<assign>
+<var>@{contexts}</var>
+</assign>
+<msg timestamp="20190911 14:40:49.742" level="INFO">[u'NATIVE_APP', u'WEBVIEW_chrome']</msg>
+<msg timestamp="20190911 14:40:49.742" level="INFO">@{contexts} = [ NATIVE_APP | WEBVIEW_chrome ]</msg>
+<status status="PASS" endtime="20190911 14:40:49.743" starttime="20190911 14:40:49.462"></status>
+</kw>
+<kw name="Log Many" library="BuiltIn">
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<arguments>
+<arg>@{contexts}</arg>
+</arguments>
+<msg timestamp="20190911 14:40:49.744" level="INFO">NATIVE_APP</msg>
+<msg timestamp="20190911 14:40:49.744" level="INFO">WEBVIEW_chrome</msg>
+<status status="PASS" endtime="20190911 14:40:49.744" starttime="20190911 14:40:49.743"></status>
+</kw>
+<kw name="Get Current Context" library="AppiumLibrary">
+<doc>Get current context.</doc>
+<assign>
+<var>${cur_context}</var>
+</assign>
+<msg timestamp="20190911 14:40:49.750" level="INFO">${cur_context} = WEBVIEW_chrome</msg>
+<status status="PASS" endtime="20190911 14:40:49.751" starttime="20190911 14:40:49.744"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${cur_context}</arg>
+</arguments>
+<msg timestamp="20190911 14:40:49.751" level="INFO">WEBVIEW_chrome</msg>
+<status status="PASS" endtime="20190911 14:40:49.752" starttime="20190911 14:40:49.751"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>开始切换</arg>
+</arguments>
+<msg timestamp="20190911 14:40:49.752" level="INFO">开始切换</msg>
+<status status="PASS" endtime="20190911 14:40:49.752" starttime="20190911 14:40:49.752"></status>
+</kw>
+<kw name="Switch To Context" library="AppiumLibrary">
+<doc>Switch to a new context</doc>
+<arguments>
+<arg>WEBVIEW_chrome</arg>
+</arguments>
+<status status="PASS" endtime="20190911 14:40:49.757" starttime="20190911 14:40:49.753"></status>
+</kw>
+<kw name="Get Current Context" library="AppiumLibrary">
+<doc>Get current context.</doc>
+<assign>
+<var>${cur_context}</var>
+</assign>
+<msg timestamp="20190911 14:40:49.763" level="INFO">${cur_context} = WEBVIEW_chrome</msg>
+<status status="PASS" endtime="20190911 14:40:49.763" starttime="20190911 14:40:49.757"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${cur_context}</arg>
+</arguments>
+<msg timestamp="20190911 14:40:49.764" level="INFO">WEBVIEW_chrome</msg>
+<status status="PASS" endtime="20190911 14:40:49.764" starttime="20190911 14:40:49.763"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${page}</arg>
+<arg>Log Source</arg>
+</arguments>
+<status status="PASS" endtime="20190911 14:40:49.764" starttime="20190911 14:40:49.764"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>log</arg>
+<arg>${page}</arg>
+</arguments>
+<status status="PASS" endtime="20190911 14:40:49.765" starttime="20190911 14:40:49.765"></status>
+</kw>
+<status status="PASS" endtime="20190911 14:40:49.765" starttime="20190911 14:40:49.462"></status>
+</kw>
+<kw name="输入用户名" library="xpath路径">
+<arguments>
+<arg>18813727290</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>用户名</arg>
+</arguments>
+<status status="PASS" endtime="20190911 14:40:49.879" starttime="20190911 14:40:49.767"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//*[@id="app"]/div[1]/div[2]/div[1]/div[2]/div/input</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20190911 14:40:49.880" level="INFO">Typing text '18813727290' into text field '//*[@id="app"]/div[1]/div[2]/div[1]/div[2]/div/input'</msg>
+<status status="PASS" endtime="20190911 14:40:50.438" starttime="20190911 14:40:49.879"></status>
+</kw>
+<status status="PASS" endtime="20190911 14:40:50.438" starttime="20190911 14:40:49.766"></status>
+</kw>
+<kw name="输入密码" library="xpath路径">
+<arguments>
+<arg>qq123456</arg>
+</arguments>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//*[@id="app"]/div[1]/div[2]/div[1]/div[3]/div/input</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20190911 14:40:50.440" level="INFO">Typing text 'qq123456' into text field '//*[@id="app"]/div[1]/div[2]/div[1]/div[3]/div/input'</msg>
+<status status="PASS" endtime="20190911 14:40:50.862" starttime="20190911 14:40:50.439"></status>
+</kw>
+<status status="PASS" endtime="20190911 14:40:50.862" starttime="20190911 14:40:50.439"></status>
+</kw>
+<kw name="点击登录按钮" library="xpath路径">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//*[@id="app"]/div[1]/div[2]/p[1]</arg>
+</arguments>
+<msg timestamp="20190911 14:40:50.864" level="INFO">Clicking element '//*[@id="app"]/div[1]/div[2]/p[1]'.</msg>
+<status status="PASS" endtime="20190911 14:40:51.214" starttime="20190911 14:40:50.863"></status>
+</kw>
+<status status="PASS" endtime="20190911 14:40:51.215" starttime="20190911 14:40:50.863"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20190911 14:40:53.215" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20190911 14:40:53.216" starttime="20190911 14:40:51.215"></status>
+</kw>
+<kw name="切换到native" library="切换到webview&amp;native">
+<kw name="Get Contexts" library="AppiumLibrary">
+<doc>Get available contexts.</doc>
+<assign>
+<var>@{contexts}</var>
+</assign>
+<msg timestamp="20190911 14:40:53.545" level="INFO">[u'NATIVE_APP', u'WEBVIEW_chrome']</msg>
+<msg timestamp="20190911 14:40:53.545" level="INFO">@{contexts} = [ NATIVE_APP | WEBVIEW_chrome ]</msg>
+<status status="PASS" endtime="20190911 14:40:53.545" starttime="20190911 14:40:53.220"></status>
+</kw>
+<kw name="Log Many" library="BuiltIn">
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<arguments>
+<arg>@{contexts}</arg>
+</arguments>
+<msg timestamp="20190911 14:40:53.546" level="INFO">NATIVE_APP</msg>
+<msg timestamp="20190911 14:40:53.546" level="INFO">WEBVIEW_chrome</msg>
+<status status="PASS" endtime="20190911 14:40:53.547" starttime="20190911 14:40:53.546"></status>
+</kw>
+<kw name="Get Current Context" library="AppiumLibrary">
+<doc>Get current context.</doc>
+<assign>
+<var>${cur_context}</var>
+</assign>
+<msg timestamp="20190911 14:40:53.553" level="INFO">${cur_context} = WEBVIEW_chrome</msg>
+<status status="PASS" endtime="20190911 14:40:53.553" starttime="20190911 14:40:53.547"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${cur_context}</arg>
+</arguments>
+<msg timestamp="20190911 14:40:53.554" level="INFO">WEBVIEW_chrome</msg>
+<status status="PASS" endtime="20190911 14:40:53.554" starttime="20190911 14:40:53.553"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>开始切换</arg>
+</arguments>
+<msg timestamp="20190911 14:40:53.555" level="INFO">开始切换</msg>
+<status status="PASS" endtime="20190911 14:40:53.555" starttime="20190911 14:40:53.554"></status>
+</kw>
+<kw name="Switch To Context" library="AppiumLibrary">
+<doc>Switch to a new context</doc>
+<arguments>
+<arg>NATIVE_APP</arg>
+</arguments>
+<status status="PASS" endtime="20190911 14:40:53.703" starttime="20190911 14:40:53.555"></status>
+</kw>
+<kw name="Get Current Context" library="AppiumLibrary">
+<doc>Get current context.</doc>
+<assign>
+<var>${cur_context}</var>
+</assign>
+<msg timestamp="20190911 14:40:53.709" level="INFO">${cur_context} = NATIVE_APP</msg>
+<status status="PASS" endtime="20190911 14:40:53.710" starttime="20190911 14:40:53.703"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>log</arg>
+<arg>${cur_context}</arg>
+</arguments>
+<status status="PASS" endtime="20190911 14:40:53.710" starttime="20190911 14:40:53.710"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Sleep</arg>
+<arg>3</arg>
+</arguments>
+<status status="PASS" endtime="20190911 14:40:53.711" starttime="20190911 14:40:53.711"></status>
+</kw>
+<status status="PASS" endtime="20190911 14:40:53.711" starttime="20190911 14:40:53.218"></status>
+</kw>
+<kw name="选择不保存密码" library="xpath路径">
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>密码</arg>
+</arguments>
+<status status="PASS" endtime="20190911 14:40:54.406" starttime="20190911 14:40:53.712"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>com.android.chrome:id/button_secondary</arg>
+</arguments>
+<msg timestamp="20190911 14:40:54.406" level="INFO">Clicking element 'com.android.chrome:id/button_secondary'.</msg>
+<status status="PASS" endtime="20190911 14:40:54.610" starttime="20190911 14:40:54.406"></status>
+</kw>
+<status status="PASS" endtime="20190911 14:40:54.611" starttime="20190911 14:40:53.711"></status>
+</kw>
+<kw name="切换到webview" library="切换到webview&amp;native">
+<kw name="Get Contexts" library="AppiumLibrary">
+<doc>Get available contexts.</doc>
+<assign>
+<var>@{contexts}</var>
+</assign>
+<msg timestamp="20190911 14:40:54.954" level="INFO">[u'NATIVE_APP', u'WEBVIEW_chrome']</msg>
+<msg timestamp="20190911 14:40:54.955" level="INFO">@{contexts} = [ NATIVE_APP | WEBVIEW_chrome ]</msg>
+<status status="PASS" endtime="20190911 14:40:54.955" starttime="20190911 14:40:54.612"></status>
+</kw>
+<kw name="Log Many" library="BuiltIn">
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<arguments>
+<arg>@{contexts}</arg>
+</arguments>
+<msg timestamp="20190911 14:40:54.956" level="INFO">NATIVE_APP</msg>
+<msg timestamp="20190911 14:40:54.956" level="INFO">WEBVIEW_chrome</msg>
+<status status="PASS" endtime="20190911 14:40:54.956" starttime="20190911 14:40:54.955"></status>
+</kw>
+<kw name="Get Current Context" library="AppiumLibrary">
+<doc>Get current context.</doc>
+<assign>
+<var>${cur_context}</var>
+</assign>
+<msg timestamp="20190911 14:40:54.963" level="INFO">${cur_context} = NATIVE_APP</msg>
+<status status="PASS" endtime="20190911 14:40:54.963" starttime="20190911 14:40:54.956"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${cur_context}</arg>
+</arguments>
+<msg timestamp="20190911 14:40:54.964" level="INFO">NATIVE_APP</msg>
+<status status="PASS" endtime="20190911 14:40:54.964" starttime="20190911 14:40:54.964"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>开始切换</arg>
+</arguments>
+<msg timestamp="20190911 14:40:54.965" level="INFO">开始切换</msg>
+<status status="PASS" endtime="20190911 14:40:54.965" starttime="20190911 14:40:54.965"></status>
+</kw>
+<kw name="Switch To Context" library="AppiumLibrary">
+<doc>Switch to a new context</doc>
+<arguments>
+<arg>WEBVIEW_chrome</arg>
+</arguments>
+<status status="PASS" endtime="20190911 14:40:55.133" starttime="20190911 14:40:54.966"></status>
+</kw>
+<kw name="Get Current Context" library="AppiumLibrary">
+<doc>Get current context.</doc>
+<assign>
+<var>${cur_context}</var>
+</assign>
+<msg timestamp="20190911 14:40:55.139" level="INFO">${cur_context} = WEBVIEW_chrome</msg>
+<status status="PASS" endtime="20190911 14:40:55.139" starttime="20190911 14:40:55.134"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${cur_context}</arg>
+</arguments>
+<msg timestamp="20190911 14:40:55.140" level="INFO">WEBVIEW_chrome</msg>
+<status status="PASS" endtime="20190911 14:40:55.140" starttime="20190911 14:40:55.140"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${page}</arg>
+<arg>Log Source</arg>
+</arguments>
+<status status="PASS" endtime="20190911 14:40:55.141" starttime="20190911 14:40:55.141"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>log</arg>
+<arg>${page}</arg>
+</arguments>
+<status status="PASS" endtime="20190911 14:40:55.141" starttime="20190911 14:40:55.141"></status>
+</kw>
+<status status="PASS" endtime="20190911 14:40:55.142" starttime="20190911 14:40:54.611"></status>
+</kw>
+<kw name="登录成功断言" library="登录功能断言">
+<arguments>
+<arg>G18813727290</arg>
+<arg>18813727290</arg>
+</arguments>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>//*[@id="app"]/div[1]/div[1]/header/div/div/div[2]/div[1]/div[1]</arg>
+</arguments>
+<assign>
+<var>${getLoginName}</var>
+</assign>
+<msg timestamp="20190911 14:40:55.315" level="INFO">Element '//*[@id="app"]/div[1]/div[1]/header/div/div/div[2]/div[1]/div[1]' text is '用户名: G18813727290' </msg>
+<msg timestamp="20190911 14:40:55.315" level="INFO">${getLoginName} = 用户名: G18813727290</msg>
+<status status="PASS" endtime="20190911 14:40:55.315" starttime="20190911 14:40:55.142"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${getLoginName}</arg>
+<arg>${targetName}</arg>
+</arguments>
+<status status="PASS" endtime="20190911 14:40:55.317" starttime="20190911 14:40:55.316"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${getLoginName}</arg>
+</arguments>
+<msg timestamp="20190911 14:40:55.317" level="INFO">用户名: G18813727290</msg>
+<status status="PASS" endtime="20190911 14:40:55.317" starttime="20190911 14:40:55.317"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>登录成功</arg>
+</arguments>
+<msg timestamp="20190911 14:40:55.318" level="INFO">登录成功</msg>
+<status status="PASS" endtime="20190911 14:40:55.318" starttime="20190911 14:40:55.318"></status>
+</kw>
+<status status="PASS" endtime="20190911 14:40:55.318" starttime="20190911 14:40:55.142"></status>
+</kw>
+<status status="PASS" endtime="20190911 14:40:55.319" starttime="20190911 14:40:11.646"></status>
+</kw>
+<kw name="切换到webview" library="切换到webview&amp;native">
+<kw name="Get Contexts" library="AppiumLibrary">
+<doc>Get available contexts.</doc>
+<assign>
+<var>@{contexts}</var>
+</assign>
+<msg timestamp="20190911 14:40:55.627" level="INFO">[u'NATIVE_APP', u'WEBVIEW_chrome']</msg>
+<msg timestamp="20190911 14:40:55.627" level="INFO">@{contexts} = [ NATIVE_APP | WEBVIEW_chrome ]</msg>
+<status status="PASS" endtime="20190911 14:40:55.627" starttime="20190911 14:40:55.319"></status>
+</kw>
+<kw name="Log Many" library="BuiltIn">
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<arguments>
+<arg>@{contexts}</arg>
+</arguments>
+<msg timestamp="20190911 14:40:55.628" level="INFO">NATIVE_APP</msg>
+<msg timestamp="20190911 14:40:55.628" level="INFO">WEBVIEW_chrome</msg>
+<status status="PASS" endtime="20190911 14:40:55.628" starttime="20190911 14:40:55.628"></status>
+</kw>
+<kw name="Get Current Context" library="AppiumLibrary">
+<doc>Get current context.</doc>
+<assign>
+<var>${cur_context}</var>
+</assign>
+<msg timestamp="20190911 14:40:55.635" level="INFO">${cur_context} = WEBVIEW_chrome</msg>
+<status status="PASS" endtime="20190911 14:40:55.635" starttime="20190911 14:40:55.628"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${cur_context}</arg>
+</arguments>
+<msg timestamp="20190911 14:40:55.635" level="INFO">WEBVIEW_chrome</msg>
+<status status="PASS" endtime="20190911 14:40:55.636" starttime="20190911 14:40:55.635"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>开始切换</arg>
+</arguments>
+<msg timestamp="20190911 14:40:55.636" level="INFO">开始切换</msg>
+<status status="PASS" endtime="20190911 14:40:55.636" starttime="20190911 14:40:55.636"></status>
+</kw>
+<kw name="Switch To Context" library="AppiumLibrary">
+<doc>Switch to a new context</doc>
+<arguments>
+<arg>WEBVIEW_chrome</arg>
+</arguments>
+<status status="PASS" endtime="20190911 14:40:55.641" starttime="20190911 14:40:55.637"></status>
+</kw>
+<kw name="Get Current Context" library="AppiumLibrary">
+<doc>Get current context.</doc>
+<assign>
+<var>${cur_context}</var>
+</assign>
+<msg timestamp="20190911 14:40:55.647" level="INFO">${cur_context} = WEBVIEW_chrome</msg>
+<status status="PASS" endtime="20190911 14:40:55.647" starttime="20190911 14:40:55.642"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${cur_context}</arg>
+</arguments>
+<msg timestamp="20190911 14:40:55.648" level="INFO">WEBVIEW_chrome</msg>
+<status status="PASS" endtime="20190911 14:40:55.648" starttime="20190911 14:40:55.648"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${page}</arg>
+<arg>Log Source</arg>
+</arguments>
+<status status="PASS" endtime="20190911 14:40:55.649" starttime="20190911 14:40:55.649"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>log</arg>
+<arg>${page}</arg>
+</arguments>
+<status status="PASS" endtime="20190911 14:40:55.650" starttime="20190911 14:40:55.649"></status>
+</kw>
+<status status="PASS" endtime="20190911 14:40:55.650" starttime="20190911 14:40:55.319"></status>
+</kw>
+<kw name="滑动屏幕" library="滑动屏幕">
+<arguments>
+<arg>984</arg>
+<arg>1314</arg>
+<arg>975</arg>
+<arg>962</arg>
+</arguments>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>${start_x}</arg>
+<arg>${start_y}</arg>
+<arg>${offset_x}</arg>
+<arg>${offset_y}</arg>
+</arguments>
+<status status="PASS" endtime="20190911 14:40:56.743" starttime="20190911 14:40:55.651"></status>
+</kw>
+<status status="PASS" endtime="20190911 14:40:56.744" starttime="20190911 14:40:55.650"></status>
+</kw>
+<kw name="点击添加发票资质" library="xpath路径">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//*[@id="app"]/div[1]/div[1]/section[4]/div/div/div</arg>
+</arguments>
+<msg timestamp="20190911 14:40:56.748" level="INFO">Clicking element '//*[@id="app"]/div[1]/div[1]/section[4]/div/div/div'.</msg>
+<status status="PASS" endtime="20190911 14:40:57.144" starttime="20190911 14:40:56.747"></status>
+</kw>
+<status status="PASS" endtime="20190911 14:40:57.145" starttime="20190911 14:40:56.745"></status>
+</kw>
+<kw name="切换到webview" library="切换到webview&amp;native">
+<kw name="Get Contexts" library="AppiumLibrary">
+<doc>Get available contexts.</doc>
+<assign>
+<var>@{contexts}</var>
+</assign>
+<msg timestamp="20190911 14:40:57.427" level="INFO">[u'NATIVE_APP', u'WEBVIEW_chrome']</msg>
+<msg timestamp="20190911 14:40:57.427" level="INFO">@{contexts} = [ NATIVE_APP | WEBVIEW_chrome ]</msg>
+<status status="PASS" endtime="20190911 14:40:57.428" starttime="20190911 14:40:57.146"></status>
+</kw>
+<kw name="Log Many" library="BuiltIn">
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<arguments>
+<arg>@{contexts}</arg>
+</arguments>
+<msg timestamp="20190911 14:40:57.429" level="INFO">NATIVE_APP</msg>
+<msg timestamp="20190911 14:40:57.429" level="INFO">WEBVIEW_chrome</msg>
+<status status="PASS" endtime="20190911 14:40:57.429" starttime="20190911 14:40:57.428"></status>
+</kw>
+<kw name="Get Current Context" library="AppiumLibrary">
+<doc>Get current context.</doc>
+<assign>
+<var>${cur_context}</var>
+</assign>
+<msg timestamp="20190911 14:40:57.435" level="INFO">${cur_context} = WEBVIEW_chrome</msg>
+<status status="PASS" endtime="20190911 14:40:57.435" starttime="20190911 14:40:57.430"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${cur_context}</arg>
+</arguments>
+<msg timestamp="20190911 14:40:57.436" level="INFO">WEBVIEW_chrome</msg>
+<status status="PASS" endtime="20190911 14:40:57.436" starttime="20190911 14:40:57.436"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>开始切换</arg>
+</arguments>
+<msg timestamp="20190911 14:40:57.437" level="INFO">开始切换</msg>
+<status status="PASS" endtime="20190911 14:40:57.437" starttime="20190911 14:40:57.436"></status>
+</kw>
+<kw name="Switch To Context" library="AppiumLibrary">
+<doc>Switch to a new context</doc>
+<arguments>
+<arg>WEBVIEW_chrome</arg>
+</arguments>
+<status status="PASS" endtime="20190911 14:40:57.441" starttime="20190911 14:40:57.437"></status>
+</kw>
+<kw name="Get Current Context" library="AppiumLibrary">
+<doc>Get current context.</doc>
+<assign>
+<var>${cur_context}</var>
+</assign>
+<msg timestamp="20190911 14:40:57.447" level="INFO">${cur_context} = WEBVIEW_chrome</msg>
+<status status="PASS" endtime="20190911 14:40:57.447" starttime="20190911 14:40:57.441"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${cur_context}</arg>
+</arguments>
+<msg timestamp="20190911 14:40:57.448" level="INFO">WEBVIEW_chrome</msg>
+<status status="PASS" endtime="20190911 14:40:57.448" starttime="20190911 14:40:57.448"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${page}</arg>
+<arg>Log Source</arg>
+</arguments>
+<status status="PASS" endtime="20190911 14:40:57.449" starttime="20190911 14:40:57.449"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>log</arg>
+<arg>${page}</arg>
+</arguments>
+<status status="PASS" endtime="20190911 14:40:57.449" starttime="20190911 14:40:57.449"></status>
+</kw>
+<status status="PASS" endtime="20190911 14:40:57.450" starttime="20190911 14:40:57.145"></status>
+</kw>
+<kw name="填写发票资质内容" library="xpath路径">
+<arguments>
+<arg>格力电器</arg>
+<arg>123456789098nwq</arg>
+<arg>珠海市</arg>
+<arg>18578261234</arg>
+<arg>农业银行</arg>
+<arg>62170024123456</arg>
+<arg>测试</arg>
+<arg>广东省</arg>
+<arg>珠海市</arg>
+<arg>18578294569</arg>
+</arguments>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//*[@id="app"]/div[1]/div/div[1]/div/div/div[1]/input</arg>
+<arg>${companyName}</arg>
+</arguments>
+<msg timestamp="20190911 14:40:57.451" level="INFO">Typing text '格力电器' into text field '//*[@id="app"]/div[1]/div/div[1]/div/div/div[1]/input'</msg>
+<status status="PASS" endtime="20190911 14:40:57.809" starttime="20190911 14:40:57.451"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//*[@id="app"]/div[1]/div/div[1]/div/div/div[2]/input</arg>
+<arg>${number}</arg>
+</arguments>
+<msg timestamp="20190911 14:40:57.810" level="INFO">Typing text '123456789098nwq' into text field '//*[@id="app"]/div[1]/div/div[1]/div/div/div[2]/input'</msg>
+<status status="PASS" endtime="20190911 14:40:58.487" starttime="20190911 14:40:57.809"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//*[@id="app"]/div[1]/div/div[1]/div/div/div[3]/input</arg>
+<arg>${address}</arg>
+</arguments>
+<msg timestamp="20190911 14:40:58.490" level="INFO">Typing text '珠海市' into text field '//*[@id="app"]/div[1]/div/div[1]/div/div/div[3]/input'</msg>
+<status status="PASS" endtime="20190911 14:40:58.910" starttime="20190911 14:40:58.489"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//*[@id="app"]/div[1]/div/div[1]/div/div/div[4]/input</arg>
+<arg>${phoneNumber}</arg>
+</arguments>
+<msg timestamp="20190911 14:40:58.911" level="INFO">Typing text '18578261234' into text field '//*[@id="app"]/div[1]/div/div[1]/div/div/div[4]/input'</msg>
+<status status="PASS" endtime="20190911 14:40:59.502" starttime="20190911 14:40:58.911"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//*[@id="app"]/div[1]/div/div[1]/div/div/div[5]/input</arg>
+<arg>${bankName}</arg>
+</arguments>
+<msg timestamp="20190911 14:40:59.503" level="INFO">Typing text '农业银行' into text field '//*[@id="app"]/div[1]/div/div[1]/div/div/div[5]/input'</msg>
+<status status="PASS" endtime="20190911 14:40:59.799" starttime="20190911 14:40:59.503"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//*[@id="app"]/div[1]/div/div[1]/div/div/div[6]/input</arg>
+<arg>${bankAccount}</arg>
+</arguments>
+<msg timestamp="20190911 14:40:59.801" level="INFO">Typing text '62170024123456' into text field '//*[@id="app"]/div[1]/div/div[1]/div/div/div[6]/input'</msg>
+<status status="PASS" endtime="20190911 14:41:00.493" starttime="20190911 14:40:59.800"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//*[@id="app"]/div[1]/div/div[1]/div/div/div[7]/input</arg>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20190911 14:41:00.495" level="INFO">Typing text '测试' into text field '//*[@id="app"]/div[1]/div/div[1]/div/div/div[7]/input'</msg>
+<status status="PASS" endtime="20190911 14:41:00.843" starttime="20190911 14:41:00.494"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//*[@id="app"]/div[1]/div/div[1]/div/div/div[8]/input</arg>
+<arg>${region}</arg>
+</arguments>
+<msg timestamp="20190911 14:41:00.844" level="INFO">Typing text '广东省' into text field '//*[@id="app"]/div[1]/div/div[1]/div/div/div[8]/input'</msg>
+<status status="PASS" endtime="20190911 14:41:01.130" starttime="20190911 14:41:00.844"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//*[@id="app"]/div[1]/div/div[1]/div/div/div[9]/input</arg>
+<arg>${detailAddress}</arg>
+</arguments>
+<msg timestamp="20190911 14:41:01.131" level="INFO">Typing text '珠海市' into text field '//*[@id="app"]/div[1]/div/div[1]/div/div/div[9]/input'</msg>
+<status status="PASS" endtime="20190911 14:41:01.376" starttime="20190911 14:41:01.130"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//*[@id="app"]/div[1]/div/div[1]/div/div/div[10]/input</arg>
+<arg>${Mobile}</arg>
+</arguments>
+<msg timestamp="20190911 14:41:01.377" level="INFO">Typing text '18578294569' into text field '//*[@id="app"]/div[1]/div/div[1]/div/div/div[10]/input'</msg>
+<status status="PASS" endtime="20190911 14:41:01.854" starttime="20190911 14:41:01.377"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//*[@id="app"]/div[1]/div/div[2]/div/div/div/i</arg>
+</arguments>
+<msg timestamp="20190911 14:41:01.855" level="INFO">Clicking element '//*[@id="app"]/div[1]/div/div[2]/div/div/div/i'.</msg>
+<status status="PASS" endtime="20190911 14:41:02.153" starttime="20190911 14:41:01.855"></status>
+</kw>
+<status status="PASS" endtime="20190911 14:41:02.154" starttime="20190911 14:40:57.450"></status>
+</kw>
+<kw name="点击保存发票资质" library="xpath路径">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//*[@id="app"]/div[1]/div/div[4]/button</arg>
+</arguments>
+<msg timestamp="20190911 14:41:02.155" level="INFO">Clicking element '//*[@id="app"]/div[1]/div/div[4]/button'.</msg>
+<status status="PASS" endtime="20190911 14:41:02.441" starttime="20190911 14:41:02.154"></status>
+</kw>
+<status status="PASS" endtime="20190911 14:41:02.442" starttime="20190911 14:41:02.154"></status>
+</kw>
+<status status="PASS" endtime="20190911 14:41:02.442" critical="yes" starttime="20190911 14:40:11.644"></status>
+</test>
+<status status="PASS" endtime="20190911 14:41:02.443" starttime="20190911 14:40:11.415"></status>
+</suite>
+<status status="PASS" endtime="20190911 14:41:02.445" starttime="20190911 14:40:11.413"></status>
+</suite>
+<status status="PASS" endtime="20190911 14:41:02.447" starttime="20190911 14:40:11.411"></status>
+</suite>
+<status status="PASS" endtime="20190911 14:41:02.450" starttime="20190911 14:40:11.394"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="MALL" pass="1">MALL</stat>
+<stat fail="0" id="s1-s1" name="功能库" pass="1">MALL.功能库</stat>
+<stat fail="0" id="s1-s1-s1" name="发票资质" pass="1">MALL.功能库.发票资质</stat>
+<stat fail="0" id="s1-s1-s1-s1" name="发票资质" pass="1">MALL.功能库.发票资质.发票资质</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

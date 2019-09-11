@@ -1,0 +1,17 @@
+*** Settings ***
+Library     AppiumLibrary
+
+*** Keywords ***
+初始化APP
+    Open Application    http://localhost:4723/wd/hub    unicodeKeyboard=true    resetKeyboard=true    platformName=Android    platformVersion=7.0    deviceName=30120ca00704
+    ...    appPackage=com.android.chrome    appActivity=org.chromium.chrome.browser.ChromeTabbedActivity    chromedriverExcutable=D:\Appium\node_modules\appium\node_modules\appium-chromedriver\chromedriver\win\chromedriver.exe\win\    automationName=Uiautomator2
+     #在初始化chrome时会让选择是否接收协议
+    BuiltIn.Sleep    3    
+    Wait Until Page Contains Element    com.android.chrome:id/terms_accept
+    Click Element    com.android.chrome:id/terms_accept
+    #等待元素出现google搜索框
+    BuiltIn.Sleep    1    
+    Wait Until Page Contains Element    com.android.chrome:id/search_box_text
+    #进入到mall商城
+    AppiumLibrary.Go To Url    https://mall.gree.com
+    BuiltIn.Sleep    5    
